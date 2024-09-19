@@ -1,0 +1,33 @@
+pipeline:
+  name: Build jhttp-harness-example
+  identifier: Build_bhandley_jhttp_harness_example_1726768910109
+  projectIdentifier: Brian_Handley
+  orgIdentifier: default
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        type: CI
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Echo Welcome Message
+                  identifier: Echo_Welcome_Message
+                  spec:
+                    shell: Sh
+                    command: echo "Welcome to Harness CI"
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.Github
+        repoName: bhandley/jhttp-harness-example
+        build: <+input>
