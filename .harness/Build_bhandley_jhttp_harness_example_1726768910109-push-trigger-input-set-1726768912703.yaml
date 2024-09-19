@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_bhandley_jhttp_harness_example_1726768910109-push-trigger-input-set
+  identifier: Build_bhandley_jhttp_harness_example_1726768910109pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: Brian_Handley
+  pipeline:
+    identifier: Build_bhandley_jhttp_harness_example_1726768910109
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
