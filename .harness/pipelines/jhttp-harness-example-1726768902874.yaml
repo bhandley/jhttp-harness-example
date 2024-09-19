@@ -14,11 +14,13 @@ pipeline:
             steps:
               - step:
                   type: Run
-                  name: Echo Welcome Message
-                  identifier: Echo_Welcome_Message
+                  identifier: build_java_app
+                  name: Build Java App
                   spec:
                     shell: Sh
-                    command: echo "Welcome to Harness CI"
+                    command: |-
+                      echo "Welcome to Harness CI"
+                      mvn -B package --file pom.xml
           platform:
             os: Linux
             arch: Amd64
