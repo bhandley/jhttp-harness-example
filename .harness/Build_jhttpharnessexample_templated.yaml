@@ -20,14 +20,11 @@ pipeline:
                       echo "Welcome to Harness CI"
                       mvn -B package --file pom.xml
               - step:
-                  type: BuildAndPushDockerRegistry
-                  name: BuildAndPushDockerRegistry_1
-                  identifier: BuildAndPushDockerRegistry_1
-                  spec:
-                    connectorRef: BHdockerhubconnector
-                    repo: bhandley/jhttp-example
-                    tags:
-                      - <+pipeline.sequenceId>
+                  name: BuildPushtoDocker
+                  identifier: BuildPushtoDocker
+                  template:
+                    templateRef: BH_build_and_push_Docker_image
+                    versionLabel: V3
           platform:
             os: Linux
             arch: Amd64

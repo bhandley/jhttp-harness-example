@@ -1,0 +1,27 @@
+inputSet:
+  name: bh jhttp input set
+  identifier: bh_jhttp_input_set
+  orgIdentifier: default
+  projectIdentifier: Brian_Handley
+  pipeline:
+    identifier: Build_jhttpharnessexample_templated
+    stages:
+      - stage:
+          identifier: Deploy_to_minikube
+          type: Deployment
+          spec:
+            service:
+              serviceInputs:
+                serviceDefinition:
+                  type: Kubernetes
+                  spec:
+                    artifacts:
+                      primary:
+                        primaryArtifactRef: jhttp_image
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
