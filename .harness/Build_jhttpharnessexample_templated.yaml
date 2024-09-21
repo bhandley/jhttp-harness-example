@@ -89,4 +89,4 @@ pipeline:
         build: <+input>
   identifier: Build_jhttpharnessexample_templated
   tags: {}
-  name: Build jhttp-harness-example - templated
+  name: Templated Build jhttp-harness-example
