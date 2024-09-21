@@ -87,3 +87,15 @@ pipeline:
   identifier: Build_jhttpharnessexample_templated
   tags: {}
   name: Templated Build jhttp-harness-example
+  notificationRules:
+    - name: BH email notification
+      identifier: BH_email_notification
+      pipelineEvents:
+        - type: AllEvents
+      notificationMethod:
+        type: Email
+        spec:
+          userGroups: []
+          recipients:
+            - bhandley66@gmail.com
+      enabled: true
